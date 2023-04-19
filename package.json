@@ -1,0 +1,26 @@
+{
+  "name": "chat-room-api",
+  "version": "1.0.0",
+  "description": "api for online chat room",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Tianlang (Harris) Gu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-socket.io-session": "^1.3.5",
+    "jquery": "^3.6.3",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.4"
+  },
+  "keywords": [
+    "FSE"
+  ]
+}

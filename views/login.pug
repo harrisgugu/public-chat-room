@@ -1,0 +1,40 @@
+doctype html 
+html 
+    head
+        link(rel='stylesheet', href='/css/login.css')
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap', rel='stylesheet')
+        script(src = '../public/js/login.js')
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Public Chat Room 
+    body
+        video#cityVideo(autoplay='' muted='' loop='')
+            source(src='../assets/city_background_cut.mp4',type='video/mp4')
+        hs#ltitle Welcome to the Public Chat Room! 
+        div#login
+            .inlineBlock 
+                p 
+                
+                if !match
+                        p Username or Password incorrect, please try again.
+                else if empty  
+                        p Username or Password is empty, please try again.
+                form(action = "/register",method = 'GET')#form2
+                form(action = "/login",method = 'POST')#form1
+                    div.input.center()
+                        span.label username 
+                        input(name = "username",type = 'text',form = "form1").input
+                    p 
+                    
+                    div.input.center()
+                        span.label password 
+                        input(name = "password",type = 'password',form = "form1").input
+                    p 
+
+                    div
+                        input(type ='submit',value = 'login',form = "form1").sbtn
+                        input(type ='submit',value = 'register',form = "form2").btn
+                
+                        
+    

@@ -1,0 +1,34 @@
+doctype html 
+html   
+    head 
+        link(rel = 'stylesheet',href = '/css/style.css')
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap', rel='stylesheet')
+        link(href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" ,rel="stylesheet")
+        script(type="text/javascript" src='/socket.io/socket.io.js')
+        script(type="text/javascript" src="https://code.jquery.com/jquery-latest.js")
+        script(type="text/javascript" src="/js/index.js")
+
+        title Public Chatroom Login
+    body    
+        img(src='../assets/city_background.jpg')#city_background
+        p#me Cuurent User: #{currentUser}
+        form(action = "/logout",method = 'GET')
+            input(type ='submit',value = 'logout').lbtn
+        p 
+        
+        div#displaychat
+            for message in data
+                div(class = 'outer')
+                    div(class = 'usertime')
+                        div(class  ='user') user: #{message.user}
+                        div(class = 'time') #{message.timestamp} 
+                    div(class = 'msg') #{message.msg}
+        p 
+
+        .displayer
+            .chat
+            textarea.chatting(placeholder='Type your chat here')#outMsg
+            input.send(type='button' value='Post')#postBtn
+        div#messages

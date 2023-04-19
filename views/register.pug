@@ -1,0 +1,37 @@
+doctype html 
+html 
+    head
+        link(rel='stylesheet', href='/css/register.css')
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap', rel='stylesheet')
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title FSE Chat Room Login
+    body 
+        video#cityVideo(autoplay='' muted='' loop='')
+            source(src='../assets/city_background_cut.mp4',type='video/mp4')
+        hs#rtitle User Registration
+        p 
+        div#login
+            .inlineBlock
+                if !register
+                        p Username already exists, please use a different one.
+                else if empty 
+                    p Username or password cannot be empty.
+                else if !valid
+                    p Username must only be numbers and charactors.
+                form(action = "/backtoMain",method = 'GET')#form2
+                form(action = "/register",method = 'POST')#form1
+                    div.input.center()
+                        span.label.success username 
+                        input(name = "username",type = 'text').input
+                    p 
+
+                    
+                    div.input.center()
+                        span.label.success password 
+                        input(name = "password",type = 'password').input
+                        p 
+                    .center
+                        input(type ='submit',value = 'register',form = "form1").sbtn
+                        input(type ='submit',value = 'back to main page',form = "form2").btn
